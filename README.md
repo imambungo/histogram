@@ -13,7 +13,7 @@ https://github.com/imambungo/histogram.
 - matplotlib
 - PIL (Python Image Library)
 
-Kedua module di atas bisa diinstall dengan command berikut:
+Kedua module di atas bisa diinstall menggunakan command berikut:
 
 ```
 pip3 install matplotlib pillow
@@ -111,7 +111,7 @@ g
 #### Komposisi RGB
 
 R | G | B
-- | - | -
+--- | - | -
 ![](img/gambar_r.jpg) | ![](img/gambar_g.jpg) | ![](img/gambar_b.jpg)
 
 ### Sample 2
@@ -126,5 +126,5 @@ g
 #### Komposisi RGB
 
 R | G | B
-- | - | -
+--- | - | -
 ![](img/gambar2_r.jpg) | ![](img/gambar2_g.jpg) | ![](img/gambar2_b.jpg)

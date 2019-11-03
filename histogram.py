@@ -7,6 +7,27 @@ def get_file_name(file_path):
     # https://stackoverflow.com/a/678266/9157799
     return splitext(basename(file_path))[0]
 
+def tampilkan_histogram(r, g, b, gambar):
+    intensitas = list(range(256))
+    lebar_bar = 0.27
+
+    # https://stackoverflow.com/q/9304408/9157799
+    intensitas = [i-lebar_bar for i in intensitas]
+    # https://stackoverflow.com/q/14270391/9157799
+    pyplot.bar(intensitas, r, width=lebar_bar, color='r')
+
+    intensitas = [i+lebar_bar for i in intensitas]
+    pyplot.bar(intensitas, g, width=lebar_bar, color='g')
+
+    intensitas = [i+lebar_bar for i in intensitas]
+    pyplot.bar(intensitas, b, width=lebar_bar, color='b')
+
+    pyplot.title('Histogram ' + gambar)
+    pyplot.xlabel('Intensitas')
+    pyplot.ylabel('Kemunculan')
+    pyplot.legend(['R', 'G', 'B'])
+    pyplot.show()
+
 def histogram(gambar):
     GAMBAR = Image.open(gambar)
     PIXEL = GAMBAR.load()
@@ -44,25 +65,7 @@ def histogram(gambar):
     gambar_g.save('img/' + get_file_name(gambar) + '_g.jpg')
     gambar_b.save('img/' + get_file_name(gambar) + '_b.jpg')
 
-    intensitas = list(range(256))
-    lebar_bar = 0.27
-
-    # https://stackoverflow.com/q/9304408/9157799
-    intensitas = [i-lebar_bar for i in intensitas]
-    # https://stackoverflow.com/q/14270391/9157799
-    pyplot.bar(intensitas, r, width=lebar_bar, color='r')
-
-    intensitas = [i+lebar_bar for i in intensitas]
-    pyplot.bar(intensitas, g, width=lebar_bar, color='g')
-
-    intensitas = [i+lebar_bar for i in intensitas]
-    pyplot.bar(intensitas, b, width=lebar_bar, color='b')
-
-    pyplot.title('Histogram ' + gambar)
-    pyplot.xlabel('Intensitas')
-    pyplot.ylabel('Kemunculan')
-    pyplot.legend(['R', 'G', 'B'])
-    pyplot.show()
+    tampilkan_histogram(r, g, b, gambar)
 
 
 histogram('img/gambar.jpg')

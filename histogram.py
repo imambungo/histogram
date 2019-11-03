@@ -1,5 +1,11 @@
 from matplotlib import pyplot
+from os.path import basename
+from os.path import splitext
 from PIL import Image
+
+def get_file_name(file_path):
+    # https://stackoverflow.com/a/678266/9157799
+    return splitext(basename(file_path))[0]
 
 def histogram(gambar):
     GAMBAR = Image.open(gambar)
@@ -34,9 +40,9 @@ def histogram(gambar):
             pixel_g[x, y] = (0, intensitas_g, 0)
             pixel_b[x, y] = (0, 0, intensitas_b)
 
-    gambar_r.save('red.jpg')
-    gambar_g.save('green.jpg')
-    gambar_b.save('blue.jpg')
+    gambar_r.save('img/' + get_file_name(gambar) + '_r.jpg')
+    gambar_g.save('img/' + get_file_name(gambar) + '_g.jpg')
+    gambar_b.save('img/' + get_file_name(gambar) + '_b.jpg')
 
     intensitas = list(range(256))
     lebar_bar = 0.27
@@ -59,4 +65,5 @@ def histogram(gambar):
     pyplot.show()
 
 
-histogram('gambar.jpg')
+histogram('img/gambar.jpg')
+histogram('img/gambar2.jpg')

@@ -9,7 +9,7 @@ def get_file_name(file_path):
 
 def tampilkan_histogram(r, g, b, gambar):
     intensitas = list(range(256))
-    lebar_bar = 0.27
+    lebar_bar = 0.3
 
     # https://stackoverflow.com/q/9304408/9157799
     intensitas = [i-lebar_bar for i in intensitas]

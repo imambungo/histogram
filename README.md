@@ -106,7 +106,7 @@ histogram('img/gambar2.jpg')
 
 #### Histogram
 
-g
+![](img/histogram_1.png)
 
 #### Komposisi RGB
 
@@ -121,7 +121,7 @@ R | G | B
 
 #### Histogram
 
-g
+![](img/histogram_2.png)
 
 #### Komposisi RGB
 
